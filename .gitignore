@@ -252,6 +252,5 @@ google-services.json
 .flutter-plugins
 
 .idea/
-.dart_tool/
 .vscode/
 web/
