@@ -1,3 +1,5 @@
+import 'package:chroma_browser/features/toolbar/presentation/screen/toolbar_screen.dart';
+import 'package:chroma_browser/features/web/presentation/screen/web_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,17 +11,18 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Hello, World!'),
-              SizedBox(height: 20),
-              Text('Welcome to Flutter.'),
-            ],
-          ),
+        body: Stack(
+          children: [
+            Positioned.fill(
+              child: WebScreen(),
+            ),
+            Align(
+              alignment: AlignmentGeometry.bottomCenter,
+              child: ToolbarScreen(),
+            ),
+          ],
         ),
       ),
     );
